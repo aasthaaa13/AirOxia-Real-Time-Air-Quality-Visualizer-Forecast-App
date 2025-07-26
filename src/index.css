@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === THEME VARIABLES === */
+@layer base {
+  :root {
+    /* Base Colors */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --primary: 262.1 83.3% 57.8%;
+    --secondary: 240 3.7% 15.9%;
+    --muted: 240 3.7% 15.9%;
+    --accent: 240 3.7% 15.9%;
+    --destructive: 0 62.8% 30.6%;
+    --card: var(--background);
+    --card-foreground: var(--foreground);
+    --popover: var(--background);
+    --popover-foreground: var(--foreground);
+    --border: var(--secondary);
+    --input: var(--secondary);
+    --ring: var(--primary);
+    --radius: 0.5rem;
+
+    /* AQI Chart Colors */
+    --chart-1: 22 90% 50%;
+    --chart-2: 160 90% 50%;
+    --chart-3: 300 90% 50%;
+    --chart-4: 290 90% 50%;
+    --chart-5: 340 90% 50%;
+  }
+
+  .light {
+    --background: 0 0% 98%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 262.1 83.3% 57.8%;
+    --secondary: 0 0% 96.1%;
+    --muted: 0 0% 96.1%;
+    --accent: 0 0% 96.1%;
+    --destructive: 0 84.2% 60.2%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 262.1 83.3% 57.8%;
+  }
+}
+
+/* === BASE STYLES === */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  @supports (font-variation-settings: normal) {
+    body {
+      font-family: 'Inter var', sans-serif;
+    }
+  }
+}
+
+/* === AQI TEXT COLORS === */
+.aqi-good               { @apply text-green-400; }
+.aqi-moderate           { @apply text-yellow-400; }
+.aqi-unhealthy-sensitive{ @apply text-orange-400; }
+.aqi-unhealthy          { @apply text-red-400; }
+.aqi-very-unhealthy     { @apply text-purple-400; }
+.aqi-hazardous          { @apply text-red-700; }
+
+/* === AQI BACKGROUND COLORS === */
+.aqi-good-bg               { @apply bg-green-500; }
+.aqi-moderate-bg           { @apply bg-yellow-500; }
+.aqi-unhealthy-sensitive-bg{ @apply bg-orange-500; }
+.aqi-unhealthy-bg          { @apply bg-red-500; }
+.aqi-very-unhealthy-bg     { @apply bg-purple-500; }
+.aqi-hazardous-bg          { @apply bg-red-800; }
+
+/* === AQI RING COLORS === */
+.aqi-ring-good               { @apply ring-green-500; }
+.aqi-ring-moderate           { @apply ring-yellow-500; }
+.aqi-ring-unhealthy-sensitive{ @apply ring-orange-500; }
+.aqi-ring-unhealthy          { @apply ring-red-500; }
+.aqi-ring-very-unhealthy     { @apply ring-purple-500; }
+.aqi-ring-hazardous          { @apply ring-red-800; }
+
+/* === CUSTOM SCROLLBAR === */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-secondary;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/50 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/70;
+}
+
+/* === GLASS EFFECT === */
+.glass {
+  @apply bg-card/60 backdrop-blur-xl;
+}
