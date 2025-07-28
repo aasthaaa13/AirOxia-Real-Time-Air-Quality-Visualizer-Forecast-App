@@ -1,5 +1,4 @@
-# AirOxia-Real-Time Air Quality Visualizer & Forecast App
-A beautiful, modern and respnsive web app that helps you track real-time AQI (Air Quality Index), get personalized health tips, forecast 
+
 <h1 align="center"> AirOxia</h1>
 <p align="center">
    <b>Real-Time Air Quality Visualizer & Forecast Web App</b></b>
